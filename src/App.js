@@ -1,23 +1,24 @@
-import logo from './logo.svg';
+import React, { useEffect } from 'react';
 import './App.css';
+import { useDispatch } from 'react-redux';
+import Alert from './Components/Alert';
+import Navigation from './Components/Navigation';
+import Templates from './Components/Templates';
+import { fetchTemplates } from './Redux/actions/Templates';
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchTemplates());
+    console.log("from app fetch")
+  }, [])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navigation />
+      <Alert />
+      <Templates />
     </div>
   );
 }
