@@ -11,7 +11,6 @@ function App() {
 
   useEffect(() => {
     dispatch(fetchTemplates());
-    console.log("from app fetch")
   }, [])
 
   return (

@@ -1,5 +1,3 @@
-
-
 import * as actiontypes from "../actionTypes";
 
 export const setLoading = (loading) => (dispatch) => {

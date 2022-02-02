@@ -7,7 +7,6 @@ export const fetchTemplates = () => async(dispatch) => {
   try {
     dispatch(setLoading(true));
     const { data } = await fetchTemplateApi();
-    // localStorage.setItem("templates", JSON.stringify(data));
     dispatch({
       type: actiontypes.FETCH_TEMPLATES,
       payload: data
@@ -15,7 +14,6 @@ export const fetchTemplates = () => async(dispatch) => {
     dispatch(setLoading(false));
   } catch (error) {
     console.log(error);
-    
-    dispatch(setError('No Template found, Please try again'));
+    dispatch(setError('Connection failed, Please try again'));
   }
 }

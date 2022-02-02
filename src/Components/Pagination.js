@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const Pagination = ({ postPerPage, totalPost, currentPage, numberOfPages, next, previous }) => {
+const Pagination = ({ currentPage, numberOfPages, next, previous }) => {
   return <div className='flex_around pagination'>
     <input 
       className='pageSwitch'

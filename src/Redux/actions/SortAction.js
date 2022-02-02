@@ -1,45 +1,40 @@
 import * as actiontypes from "../actionTypes";
-import { fetchTemplates } from "./Templates";
-
-// export const fetchSort = (sort) => (dispatch) => {
-//   try {
-//     dispatch({
-//       type: actiontypes.FETCH_SORT,
-//     })
-    
-//   } catch (error) {
-//     console.log(error);
-//   }
-// }
 
 export const setCategory = (category) => (dispatch) => {
   try {
     dispatch({
       type: actiontypes.SET_CATEGORY,
       payload: category
+    }) 
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export const sortBySearch = (search) => (dispatch) => {
+  try {
+    dispatch({
+      type: actiontypes.SORT_BY_SEARCH,
+      payload: search
     })
-    
   } catch (error) {
     console.log(error);
   }
 }
 
 export const sortByCategory = (category) => (dispatch) => {
-  
   try {
     console.log(category, "from action log");
     dispatch({
-      type: actiontypes.SET_CATEGORY,
+      type: actiontypes.SORT_BY_CATEGORY,
       payload: category
     })
-    
   } catch (error) {
     console.log(error);
   }
 }
 
 export const sortByOrderAscending = () => (dispatch) => {
-  console.log( "ASCENDING log" );
   try {
     dispatch({
       type: actiontypes.SORT_BY_ORDER_ASCENDING
@@ -51,7 +46,6 @@ export const sortByOrderAscending = () => (dispatch) => {
 }
 
 export const sortByOrderDesending = () => (dispatch) => {
-  console.log( "DESENDING log" );
   try {
     dispatch({
       type: actiontypes.SORT_BY_ORDER_DESENDING
@@ -63,7 +57,6 @@ export const sortByOrderDesending = () => (dispatch) => {
 }
 
 export const sortByDateAscending = () => (dispatch) => {
-  console.log( "ASCENDING log" );
   try {
     dispatch({
       type: actiontypes.SORT_BY_DATE_ASCENDING
@@ -75,7 +68,6 @@ export const sortByDateAscending = () => (dispatch) => {
 }
 
 export const sortByDateDesending = () => (dispatch) => {
-  console.log( "DESENDING log" );
   try {
     dispatch({
       type: actiontypes.SORT_BY_DATE_DESENDING
@@ -88,7 +80,6 @@ export const sortByDateDesending = () => (dispatch) => {
 
 export const sortByDefault = () => (dispatch) => {
   try {
-    dispatch(fetchTemplates());
     dispatch({
       type: actiontypes.SORT_BY_DEFAULT
     })

@@ -1,14 +1,18 @@
 import * as actiontypes from "../actionTypes";
 
- 
 export const templates = ( state = [], action) => {
   switch (action.type) {
     case actiontypes.FETCH_TEMPLATES:
-      // localStorage.setItem("templates", JSON.stringify(action.payload))
       return action.payload;
       break;
+      case actiontypes.SORT_BY_SEARCH:
+        if(action.payload === ''){
+          return state.filter(template => template);
+        }
+        return state.filter(template => template.name.toLowerCase().includes(action.payload.toLowerCase()));
+        break;
       case actiontypes.SORT_BY_CATEGORY:
-        return state.filter(template => template.category !== action.payload);
+        return state.filter(template => template.category.includes(action.payload));
         break;
       case actiontypes.SORT_BY_ORDER_ASCENDING:
         return state.slice().sort((a, b) => a.name.localeCompare(b.name)

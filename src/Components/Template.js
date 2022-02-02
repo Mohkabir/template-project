@@ -2,17 +2,13 @@ import React from 'react';
 
 const Template = ({template}) => {
 
-
-
-  const { name, description, link, category } = template; 
-
-  return <div className='card'>
+  return <div className='card' data-testId="template">
     <div>
-      <h1> {name}: {category} </h1>
-      <p> {description} </p>
+      <h1> {template?.name} </h1>
+      <p> {template?.description}</p>
     </div>
     <div className='card_footer'>
-      <a className='green' href={link}>Use Template</a>
+      <a className='green' href={template?.link}>Use Template</a>
     </div>
   </div>;
 };

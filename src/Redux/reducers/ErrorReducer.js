@@ -1,6 +1,5 @@
 import * as actiontypes from "../actionTypes";
 
-
 export const errorReducer = ( state = '', action) => {
   switch (action.type) {
     case actiontypes.SET_ERROR:
