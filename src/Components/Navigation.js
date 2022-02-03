@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { 
-  setCategory, 
+  setCategory,
+  sortByDefault, 
   sortByCategory, 
   sortByOrderDesending, 
   sortByOrderAscending, 
@@ -27,7 +28,7 @@ const Navigation = () => {
   const handleSelect = (e) => {
     if(e.target.name === 'category'){
       if(e.target.value === 'All'){
-        return null;
+        return dispatch(sortByDefault());
       }else{
         dispatch(setCategory(e.target.value));
         dispatch(sortByCategory(e.target.value));
@@ -39,7 +40,7 @@ const Navigation = () => {
       }else if(e.target.value === 'Descending'){
         dispatch(sortByOrderDesending());
       }else if(e.target.value === 'Default'){
-        return null;
+        return dispatch(sortByDefault());
       }
     }
     if(e.target.name === 'date'){
@@ -48,7 +49,7 @@ const Navigation = () => {
       }else if(e.target.value === 'Descending'){
         dispatch(sortByDateDesending());
       }else if(e.target.value === 'Default'){
-        return null;
+        return dispatch(sortByDefault());
       }
     }
   }

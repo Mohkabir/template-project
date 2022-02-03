@@ -24,7 +24,6 @@ export const sortBySearch = (search) => (dispatch) => {
 
 export const sortByCategory = (category) => (dispatch) => {
   try {
-    console.log(category, "from action log");
     dispatch({
       type: actiontypes.SORT_BY_CATEGORY,
       payload: category
