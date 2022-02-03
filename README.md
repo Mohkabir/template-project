@@ -1,4 +1,5 @@
 This project is running on React js, Redux, Scss and Axios for fetching.
+View live demo@ https://vigorous-roentgen-759eed.netlify.app/
 
 # Getting Started with Create React App
 
